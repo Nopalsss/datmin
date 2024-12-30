@@ -5,6 +5,7 @@ import seaborn as sns
 import base64
 
 
+
 def add_background(image_file):
     with open(image_file, "rb") as image:
         encoded_string = base64.b64encode(image.read()).decode()
@@ -53,7 +54,7 @@ st.header("Visualisasi yang Dipilih")
 def load_dataset():
     # Menggunakan dataset yang telah diolah sebelumnya
     dataset_path = "data_rumah_updated.xlsx"  # Sesuaikan dengan nama file Anda
-    df = pd.read_excel(dataset_path)
+    df = pd.read_excel(dataset_path, engine="openpyxl")
     return df
 
 df = load_dataset()
