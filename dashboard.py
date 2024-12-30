@@ -3,9 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import base64
-from sklearn_extra.cluster import KMedoids
-from sklearn.metrics import silhouette_score
-from sklearn.preprocessing import StandardScaler
+
 
 def add_background(image_file):
     with open(image_file, "rb") as image:
