@@ -45,9 +45,8 @@ st.sidebar.write("Pilih visualisasi untuk ditampilkan:")
 # Add a select box in the sidebar for visualization options
 option = st.sidebar.selectbox(
     "Pilihan Visualisasi",
-    ("Tampilkan Dataset", "Distribusi Harga Rumah", "Korelasi Fitur", "Hubungan Harga dengan Luas Lahan", "K-Medoids Clustering", "Silhouette Scores")
+    ("Tampilkan Dataset", "Distribusi Harga Rumah", "Korelasi Fitur", "Hubungan Harga dengan Luas Lahan", "K-Medoids Clustering", "Silhouette Scores", "Gambar Scatter Plots")
 )
-
 
 # Main content area
 st.header("Visualisasi yang Dipilih")
@@ -135,6 +134,18 @@ elif option == "Silhouette Scores":
     **Deskripsi:** Grafik ini menunjukkan Silhouette Scores untuk berbagai jumlah cluster pada K-Medoids. Nilai Silhouette Score yang lebih tinggi menunjukkan kualitas clustering yang lebih baik.
     """)
 
+elif option == "Gambar Scatter Plots":
+    st.subheader("Scatter Plots")
+
+    # Add the three scatter plots to the dashboard
+    st.image("output.png", caption="Jumlah Kamar vs Harga", use_container_width=True)
+    st.image("output2.png", caption="Jumlah Luas Lahan vs Harga", use_container_width=True)
+    st.image("output3.png", caption="Jumlah Luas Bangunan vs Harga", use_container_width=True)
+
+    st.write("""
+    **Deskripsi:** Grafik ini menunjukkan hubungan antara harga rumah dan variabel tertentu, seperti jumlah kamar, luas lahan, dan luas bangunan.
+    Grafik membantu menganalisis pola hubungan antar variabel tersebut.
+    """)
 
 # Add a footer or additional notes
 st.sidebar.info("""
